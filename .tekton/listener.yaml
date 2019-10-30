@@ -54,7 +54,7 @@ metadata:
 spec:
   params:
     - name: repository
-      value: "https://github.com/nadgowdas/gitsecure-test2"
+      value: "https://github.com/nadgowdas/multi-stage"
 ---
 apiVersion: tekton.dev/v1alpha1
 kind: EventListener
