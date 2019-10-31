@@ -8,6 +8,7 @@ spec:
       description: The git repo
     - name: revision
       description: The git repo revision
+      default: master
     - name: prnumber
       description: The pullrequest number
     - name: apikey
@@ -40,8 +41,6 @@ spec:
   params:
     - name: repository
       value: "https://github.com/nadgowdas/gitsecure-test2"
-    - name: revision
-      value: $(event.head_commit.id)
     - name: prnumber
       value: $(event.number)
 ---
