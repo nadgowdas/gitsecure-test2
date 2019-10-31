@@ -41,8 +41,10 @@ spec:
   params:
     - name: repository
       value: "https://github.com/nadgowdas/gitsecure-test2"
+    - name: revision
+      value: $(event.pull_request.head.ref)
     - name: prnumber
-      value: $(event.number)
+      value: $(event.pull_request.url)
 ---
 apiVersion: tekton.dev/v1alpha1
 kind: EventListener
