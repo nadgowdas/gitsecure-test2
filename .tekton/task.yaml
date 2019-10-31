@@ -89,9 +89,9 @@ spec:
         - "-rigserviceapi"
         - "http://169.47.180.148:30950"
         - "-pr"
-        - prnumber
+        - $(inputs.params.prnumber)
         - "-apikey"
-        - apikey
+        - $(inputs.params.apikey)
       volumeMounts:
         - mountPath: /artifacts
           name: task-volume
