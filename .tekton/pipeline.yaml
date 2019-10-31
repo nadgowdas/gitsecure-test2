@@ -8,27 +8,36 @@ spec:
       description: the pipeline pvc name
     - name: repository
       description: the git repo
+    - name: revision
+      description: The git repo revision
+    - name: prnumber
+      description: The pullrequest number
     - name: apikey
       description: the ibmcloud api key
-    - name: registryNamespace
-      description: the ibmcloud registry namespace
-    - name: cluster
-      description: The IBM Cloud Kubernetes cluster name
-    - name: registryRegion
-      description: the ibmcloud registry region
-      default: us-south
-    - name: clusterRegion
-      description: The IBM Cloud Kubernetes cluster region
-      default: us-south
-    - name: clusterNamespace
-      description: The Kubernetes cluster namespace
-      default: prod
   tasks:
-    - name: pipeline-gitsecure-task
+    - name: pipeline-gitsecure-discovery-task
       taskRef:
-        name: gitsecure-task
+        name: gitsecure-discovery-task
       params:
         - name: task-pvc
           value: $(params.pipeline-pvc)
         - name: repository
           value: $(params.repository)
+        - name: revision
+          value: $(params.revision)
+        - name: prnumber
+          value: $(params.prnumber)
+    - name: pipeline-gitsecure-cis-task
+      taskRef:
+        name: gitsecure-cis-task
+      params:
+        - name: task-pvc
+          value: $(params.pipeline-pvc)
+        - name: repository
+          value: $(params.repository)
+        - name: revision
+          value: $(params.revision)
+        - name: prnumber
+          value: $(params.prnumber)
+        - name: apikey
+          value: $(params.apikey)
