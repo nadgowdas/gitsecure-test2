@@ -39,7 +39,7 @@ metadata:
 spec:
   params:
     - name: repository
-      value: $(event.repository.full_name)
+      value: "https://github.com/nadgowdas/gitsecure-test2"
     - name: revision
       value: $(event.head_commit.id)
     - name: prnumber
