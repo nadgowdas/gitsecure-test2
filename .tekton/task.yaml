@@ -85,7 +85,7 @@ spec:
         - "-gitbranch"
         -  $(inputs.params.revision)
         - "-repodir"
-        -  "/workspace"
+        - "/workspace"
         - "-rigserviceapi"
         - "http://169.47.180.148:30950"
         - "-pr"
