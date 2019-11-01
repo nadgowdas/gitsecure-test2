@@ -76,7 +76,7 @@ spec:
         description: the ibmcloud api key
   steps:
     - name: cis
-      image: shri4u/cis-task:0.4
+      image: shri4u/cis-task:0.5
       command:
         - /go/src/github.ibm.com/rig-cis-task/bin/cis-task
       args:
