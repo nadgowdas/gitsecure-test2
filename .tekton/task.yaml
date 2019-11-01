@@ -26,7 +26,6 @@ spec:
           echo "Cloning $REPOSITORY";
           git clone -q -b $REVISION $REPOSITORY .;
           pwd;
-          env;
           ls -lRth .;
 
     - name: discovery
@@ -75,6 +74,20 @@ spec:
       - name: apikey
         description: the ibmcloud api key
   steps:
+    - name: clone-repo
+      image: alpine/git
+      env:
+        - name: REPOSITORY
+          value: $(inputs.params.repository)
+        - name: REVISION
+          value: $(inputs.params.revision)
+      command: ["/bin/sh", "-c"]
+      args:
+        - set -e -o pipefail;
+          echo "Cloning $REPOSITORY";
+          git clone -q -b $REVISION $REPOSITORY .;
+          pwd;
+
     - name: cis
       image: shri4u/cis-task:0.6
       imagePullPolicy: Always
