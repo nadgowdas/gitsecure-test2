@@ -77,6 +77,7 @@ spec:
   steps:
     - name: cis
       image: shri4u/cis-task:0.6
+      imagePullPolicy: Always
       command:
         - /go/src/github.ibm.com/rig-cis-task/bin/cis-task
       args:
