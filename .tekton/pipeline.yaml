@@ -26,9 +26,9 @@ spec:
         - name: revision
           value: $(params.revision)
     - name: pipeline-gitsecure-cis-task
+      runAfter: [pipeline-gitsecure-discovery-task]
       taskRef:
         name: gitsecure-cis-task
-        runAfter: [pipeline-gitsecure-discovery-task]
       params:
         - name: task-pvc
           value: $(params.pipeline-pvc)
