@@ -180,6 +180,7 @@ spec:
   steps:
     - name: bom
       image: shri4u/rig-bom
+      imagePullPolicy: Always
       command:
         - /gitsecure/bom-task
       args:
