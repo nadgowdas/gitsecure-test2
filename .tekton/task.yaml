@@ -173,6 +173,10 @@ spec:
       - name: revision
         description: the revision
         default: master
+      - name: prnumber
+        description: the git pr number
+      - name: apikey
+        description: the ibmcloud api key
   steps:
     - name: bom
       image: shri4u/rig-bom
