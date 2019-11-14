@@ -12,3 +12,10 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag shri4u/test
+      
+    - name: Scan image
+      uses: anchore/scan-action@master
+      with:
+         image-reference: "shri4u/test" 
+         dockerfile-path: ./Dockerfile   
+ 
